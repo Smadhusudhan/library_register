@@ -42,9 +42,11 @@ body { background: var(--bg); color: var(--text); }
 .btn.primary { background: var(--primary); color: var(--primary-text); border-color: transparent; font-weight: 600; }
 .btn.danger { background: var(--danger); color: #fff; border-color: transparent; }
 .btn.small { padding: 6px 10px; font-size: 13px; }
+.btn.link { background: transparent; border-color: transparent; color: #93c5fd; text-decoration: underline; padding-left: 4px; padding-right: 4px; }
 
 .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: end; }
 .row.end { justify-content: flex-end; }
+.row.space-between { justify-content: space-between; }
 
 .field { display: grid; gap: 6px; min-width: 220px; }
 label { color: var(--muted); font-size: 13px; }
@@ -61,3 +63,9 @@ input, select { padding: 10px 12px; border-radius: 8px; border: 1px solid var(--
 .modal::backdrop { background: rgba(0,0,0,.6); }
 .modal-content { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 16px; width: min(520px, 92vw); }
 .modal-content h3 { margin-top: 0; }
+
+/* Auth layouts */
+.hidden { display: none !important; }
+.muted { color: var(--muted); margin-left: 8px; }
+.auth-grid { display: grid; gap: 12px; }
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }

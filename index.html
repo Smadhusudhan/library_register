@@ -8,8 +8,19 @@
 </head>
 <body>
   <header class="app-header">
-    <h1>Library Management</h1>
-    <p class="subtitle">Borrow, return, and manage student accounts</p>
+    <div class="container row space-between" style="align-items:center;">
+      <div>
+        <h1 style="margin:0;">Library Management</h1>
+        <p class="subtitle" style="margin:4px 0 0;">Borrow, return, and manage student accounts</p>
+      </div>
+      <div class="row end">
+        <div>
+          <strong id="activeUserNameHeader"></strong>
+          <span id="activeUserMetaHeader" class="muted"></span>
+        </div>
+        <button id="btnLogoutHeader" class="btn" style="margin-left:12px;">Logout</button>
+      </div>
+    </div>
   </header>
 
   <main class="container">
@@ -17,7 +28,7 @@
     <div id="message" class="message" role="status" aria-live="polite"></div>
 
     <!-- Student selection and registration -->
-    <section class="panel">
+    <section class="panel" id="studentsPanel">
       <div class="panel-header">
         <h2>Students</h2>
       </div>
@@ -27,7 +38,7 @@
           <select id="studentSelect"></select>
         </div>
         <div class="field">
-          <button id="btnRegisterStudent" class="btn primary">Register New Student</button>
+          <button id="btnRegisterStudent" class="btn primary">Quick Add Student</button>
         </div>
       </div>
     </section>
@@ -59,10 +70,10 @@
     </section>
   </main>
 
-  <!-- Register student modal -->
+  <!-- Quick Register student modal -->
   <dialog id="registerDialog" class="modal">
     <form method="dialog" id="registerForm" class="modal-content" autocomplete="off">
-      <h3>Create Library Account</h3>
+      <h3>Quick Add Student</h3>
 
       <div class="field">
         <label for="studentName">Full Name</label>
@@ -76,7 +87,7 @@
 
       <div class="row end">
         <button type="button" id="cancelRegister" class="btn">Cancel</button>
-        <button type="submit" class="btn primary">Create Account</button>
+        <button type="submit" class="btn primary">Create</button>
       </div>
     </form>
   </dialog>
