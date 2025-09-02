@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Library Management</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>Library Management</h1>
+    <p class="subtitle">Borrow, return, and manage student accounts</p>
+  </header>
+
+  <main class="container">
+    <!-- Messages -->
+    <div id="message" class="message" role="status" aria-live="polite"></div>
+
+    <!-- Student selection and registration -->
+    <section class="panel">
+      <div class="panel-header">
+        <h2>Students</h2>
+      </div>
+      <div class="panel-body row">
+        <div class="field">
+          <label for="studentSelect">Current student</label>
+          <select id="studentSelect"></select>
+        </div>
+        <div class="field">
+          <button id="btnRegisterStudent" class="btn primary">Register New Student</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Books list -->
+    <section class="panel">
+      <div class="panel-header">
+        <h2>Books</h2>
+      </div>
+      <div class="panel-body">
+        <div class="table-wrapper">
+          <table class="table" id="booksTable">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Status</th>
+                <th>Borrower</th>
+                <th>Due Date</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="booksTbody">
+              <!-- Rendered by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Register student modal -->
+  <dialog id="registerDialog" class="modal">
+    <form method="dialog" id="registerForm" class="modal-content" autocomplete="off">
+      <h3>Create Library Account</h3>
+
+      <div class="field">
+        <label for="studentName">Full Name</label>
+        <input id="studentName" name="studentName" type="text" placeholder="e.g., Priya Sharma" required />
+      </div>
+
+      <div class="field">
+        <label for="studentId">Student ID</label>
+        <input id="studentId" name="studentId" type="text" placeholder="e.g., STU-001" required />
+      </div>
+
+      <div class="row end">
+        <button type="button" id="cancelRegister" class="btn">Cancel</button>
+        <button type="submit" class="btn primary">Create Account</button>
+      </div>
+    </form>
+  </dialog>
+
+  <footer class="footer">
+    <small>Demo: Data persists locally in your browser using localStorage.</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
